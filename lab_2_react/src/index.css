@@ -1,1 +1,25 @@
 @import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+.dark [class*="bg-white"] { background-color: rgb(30 41 59 / 0.7) !important; }
+
+.dark [class*="bg-slate-50"],
+.dark [class*="bg-slate-100"],
+.dark [class*="bg-gray-50"],
+.dark [class*="bg-gray-100"],
+.dark [class*="bg-neutral-50"],
+.dark [class*="bg-zinc-50"],
+.dark [class*="bg-teal-50"],
+.dark [class*="bg-blue-50"] { background-color: rgb(51 65 85 / 0.6) !important; }
+
+.dark [class*="text-slate-"],
+.dark [class*="text-gray-"],
+.dark [class*="text-neutral-"],
+.dark [class*="text-zinc-"] { color: #e2e8f0 !important; }
+
+.dark [class*="text-teal-"] { color: #2dd4bf !important; }
+.dark [class*="text-blue-"] { color: #60a5fa !important; }
+
+.dark [class*="border-slate-"],
+.dark [class*="border-gray-"] { border-color: #475569 !important; }
