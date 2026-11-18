@@ -5,20 +5,29 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Резюме Владислава Хомина — студента кібербезпеки, Python та C# розробника">
   <title>Владислав Хомин — Резюме</title>
+
+  <link rel="stylesheet" href="styles.css">
+
+  <style>
+    footer {
+      font-style: italic;
+    }
+  </style>
 </head>
 <body>
 
   <header>
-    <h1>Владислав Хомин</h1>
+    <h1 style="letter-spacing: 2px;">Владислав Хомин</h1>
     <p>Студент кібербезпеки · Python та C#</p>
-    <address>
+    <button id="theme-toggle" type="button" class="theme-toggle" aria-label="Перемкнути тему">🌙 Нічна тема</button>
+    <address class="contacts">
       <p>Місто: Львів, Україна</p>
       <p>Телефон: <a href="tel:+380989160355">+380989160355</a></p>
       <p>Пошта: <a href="mailto:hominvlad@gmail.com">hominvlad@gmail.com</a></p>
     </address>
   </header>
 
-  <main>
+  <main class="layout">
 
     <section id="about">
       <h2>Про себе</h2>
@@ -32,7 +41,7 @@
     <section id="education">
       <h2>Освіта</h2>
 
-      <article>
+      <article class="card">
         <h3>Бакалавр з кібербезпеки</h3>
         <p>
           <a href="https://lpnu.ua/" target="_blank" rel="noopener noreferrer">Львівська політехніка</a>
@@ -41,7 +50,7 @@
         </p>
       </article>
 
-      <article>
+      <article class="card">
         <h3>Повна загальна середня освіта</h3>
         <p>
           Вигодський ліцей
@@ -54,7 +63,7 @@
     <section id="projects">
       <h2>Проєкти та досвід</h2>
 
-      <article>
+      <article class="card">
         <h3>Бекенд та автоматизація</h3>
         <p>
           Розробляв і впроваджував скрипти автоматизації, інтеграції з API
@@ -62,13 +71,19 @@
         </p>
       </article>
 
-      <article>
+      <article class="card">
         <h3>Усунення несправностей та налагодження</h3>
         <p>
           Розвинув аналітичне мислення, самостійно діагностуючи, налагоджуючи
           та вирішуючи складні технічні проблеми в різних невеликих системах.
         </p>
       </article>
+    </section>
+
+    <section id="reviews">
+      <h2>Відгуки колишніх роботодавців</h2>
+      <p id="reviews-status">Завантаження відгуків...</p>
+      <div id="reviews-list"></div>
     </section>
 
     <section id="skills">
@@ -101,8 +116,39 @@
 
   <footer>
     <p>Зв'язатися зі мною: <a href="mailto:hominvlad@gmail.com">hominvlad@gmail.com</a></p>
-    <p>Лабораторна робота №2 · Львівська політехніка</p>
+    <p>Лабораторна робота №4 · Львівська політехніка</p>
+    <details class="sysinfo" open>
+      <summary>Дані з localStorage</summary>
+      <ul id="storage-info"></ul>
+    </details>
   </footer>
+
+  <div id="feedback-modal" class="modal" hidden>
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <h2 id="modal-title">Зворотний зв'язок</h2>
+      <form id="feedback-form" action="https://formspree.io/f/xkjjkjdnттзь" method="POST">
+        <label for="f-name">Ім'я</label>
+        <input id="f-name" name="name" type="text" required>
+
+        <label for="f-email">Email</label>
+        <input id="f-email" name="email" type="email" required>
+
+        <label for="f-phone">Номер телефону</label>
+        <input id="f-phone" name="phone" type="tel" required>
+
+        <label for="f-message">Повідомлення</label>
+        <textarea id="f-message" name="message" rows="4" required></textarea>
+
+        <p id="form-status" role="status"></p>
+        <div class="modal-actions">
+          <button type="submit">Надіслати</button>
+          <button type="button" id="modal-close">Закрити</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 
 </body>
 </html>
