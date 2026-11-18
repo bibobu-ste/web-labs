@@ -26,7 +26,7 @@ function App() {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
 
   return (
-    <div className="min-h-screen bg-[url('nihqbfwfkog91.jpg')] bg-cover bg-center bg-fixed text-left text-slate-800 dark:text-slate-100">
+    <div className="min-h-screen bg-[url('/nihqbfwfkog91.jpg')] bg-cover bg-center bg-fixed text-left text-slate-800 dark:text-slate-100">
       <Header />
 
       <button
